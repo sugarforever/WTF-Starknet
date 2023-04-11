@@ -7,9 +7,9 @@ const main = async () => {
     console.log("Chain ID: ", await provider.getChainId());
 
     // get account nonce
-    const addr = "0x06b59aEC7b1cC7248E206abfabe62062ba1aD75783E7A2Dc19E7F3f351Ac3309"
+    const addr = "0x0736e99ce85cfd72142842d4d7c6760a835ef95ed5271ffb2a6e51db44087ec1"
     const nonce = await provider.getNonceForAddress(addr)
-    console.log(Number(nonce));
+    console.log("Nonce: ", Number(nonce));
 
     // read contract 
     const testAddress = "0x0352654644b53b008b9fd565846cca116c0911d0eeabb57df00b55ed77ad211e";
@@ -27,7 +27,7 @@ const main = async () => {
     // Write contract
     const privateKey = process.env.PRIVATE_KEY;
     console.log(privateKey)
-    const accountAddr = "0x06b59aEC7b1cC7248E206abfabe62062ba1aD75783E7A2Dc19E7F3f351Ac3309";
+    const accountAddr = "0x0736e99ce85cfd72142842d4d7c6760a835ef95ed5271ffb2a6e51db44087ec1";
     const starkKeyPair = ec.getKeyPair(privateKey);
     const account = new Account(provider, accountAddr, starkKeyPair);
     // Connect account with the contract
